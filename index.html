@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SPECTRA'26 Home</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&amp;family=Cinzel+Decorative:wght@700;900&amp;family=Great+Vibes&amp;family=Quicksand:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#150833}
+*{box-sizing:border-box}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.site{--nav:64px;width:100%;max-width:1600px;margin:0 auto;font-family:'Quicksand',sans-serif;color:#FFF3D6;background:#150833;overflow-x:hidden}
+.nav{position:sticky;top:0;z-index:50;min-height:var(--nav);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px 24px;padding:0 clamp(16px,4vw,48px);background:rgba(21,8,51,.94);border-bottom:1px solid rgba(224,176,80,.55);backdrop-filter:blur(8px)}
+.brand{display:flex;align-items:center;gap:12px;font-family:'Cinzel Decorative',serif;font-weight:900;font-size:22px;letter-spacing:.08em;color:#FFD54A}
+.brand img{width:40px;height:40px;object-fit:contain}
+.links{display:flex;gap:4px}
+.links a{padding:12px 16px;font-weight:700;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#FFF3D6;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.links a:hover,.links a.on{color:#FFD54A;border-color:#FFD54A}
+.hero{position:relative;display:flex;flex-direction:column;background-color:#1F112C;background-image:url('./assets/bd4ed8635333d2c60797b35830cbdf35.jpg');background-size:100% auto;background-position:center bottom;background-repeat:no-repeat;overflow:hidden}
+.poster{position:relative;z-index:1;width:100%;aspect-ratio:1600/766;overflow:hidden}
+.poster::after{display:none}
+.poster img{position:absolute;left:0;top:0;display:block;width:100%;height:100%;object-fit:contain}
+.band{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;margin-top:-4.4%;padding:0 20px 40px;text-align:center}
+.eyebrow{font-weight:700;font-size:14px;letter-spacing:.32em;text-transform:uppercase;color:#FFD98A}
+.cds{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.cdh{display:flex;align-items:center;justify-content:center;gap:16px;width:100%;max-width:760px;font-weight:700;font-size:14px;letter-spacing:.4em;text-transform:uppercase;color:#FFE9C2}
+.cdh i{flex:1;height:1px;background:linear-gradient(90deg,transparent,#E0B050)}
+.cdh i:last-child{background:linear-gradient(90deg,#E0B050,transparent)}
+.cds{display:flex;flex-wrap:nowrap;justify-content:center;gap:12px}
+.cd{position:relative;width:112px;padding:1.5px;background:#E0B050;clip-path:polygon(12px 0,calc(100% - 12px) 0,100% 12px,100% calc(100% - 12px),calc(100% - 12px) 100%,12px 100%,0 calc(100% - 12px),0 12px)}
+.cdi{padding:14px 6px 12px;text-align:center;background:linear-gradient(180deg,#2E1262,#1B0B45);clip-path:polygon(11px 0,calc(100% - 11px) 0,100% 11px,100% calc(100% - 11px),calc(100% - 11px) 100%,11px 100%,0 calc(100% - 11px),0 11px)}
+.cdn{font-family:'Cinzel',serif;font-weight:700;font-size:40px;line-height:1.1;color:#FFE9C2}
+.cdl{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-top:2px;color:#FFF3D6}
+.info{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 36px;font-weight:700;font-size:16px;color:#FFF3D6}
+.mtxt{display:none;text-align:center}
+.mtxt b{display:block;font-family:'Cinzel',serif;font-size:17px;letter-spacing:.06em;color:#FFD54A}
+.mtxt span{display:block;margin-top:4px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#F6DDB0}
+.nx{display:flex;justify-content:center;margin-top:48px}
+.btns{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 30px;border-radius:999px;font-weight:700;font-size:15px;letter-spacing:.12em;text-transform:uppercase;transition:transform .25s,box-shadow .25s,background .25s}
+.btn.gold{background:linear-gradient(180deg,#FFE48A,#F2B02E);color:#2A1060;border:0}
+.btn.line{border:2px solid #FFD54A;color:#FFF3D6;background:rgba(40,14,80,.55)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 0 30px rgba(255,190,70,.7)}
+.sec{position:relative;overflow:hidden;scroll-margin-top:var(--nav);padding:clamp(56px,8vw,96px) clamp(16px,4vw,40px)}
+.inner{position:relative;z-index:2;max-width:1000px;margin:0 auto}
+.bgl{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.h2{margin:0;text-align:center;font-family:'Cinzel Decorative',serif;font-weight:900;font-size:clamp(28px,5vw,52px);line-height:1.2;letter-spacing:.05em;color:#FFD54A;text-shadow:0 0 24px rgba(255,170,60,.45)}
+.rule{width:min(320px,70%);height:2px;margin:18px auto 0;background:linear-gradient(90deg,transparent,#FFD54A,transparent)}
+.lead{margin:16px auto 0;max-width:640px;text-align:center;font-size:17px;line-height:1.65;color:#F3E6FF}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:44px}
+.card{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:26px 24px 24px;border-radius:22px;background:rgba(40,14,80,.62);border:1px solid rgba(224,176,80,.7);backdrop-filter:blur(10px);box-shadow:0 10px 30px rgba(8,2,24,.45),inset 0 1px 0 rgba(255,255,255,.12);transition:transform .3s,box-shadow .3s,border-color .3s}
+.card:hover{transform:translateY(-8px);border-color:#FFD54A;box-shadow:0 18px 44px rgba(8,2,24,.55),0 0 34px rgba(255,190,70,.38),inset 0 1px 0 rgba(255,255,255,.18)}
+.ctop{width:100%;display:flex;align-items:center;justify-content:space-between}
+.num{font-family:'Cinzel',serif;font-weight:700;font-size:44px;line-height:1;color:#FFD54A}
+.ico{width:52px;height:52px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:radial-gradient(circle,rgba(255,200,100,.28),rgba(255,200,100,.04));border:1px solid rgba(224,176,80,.6)}
+.cname{margin:0;font-family:'Cinzel',serif;font-weight:700;font-size:22px;line-height:1.3;letter-spacing:.05em;color:#FFF3D6}
+.vd{margin-top:auto;min-height:44px;padding:10px 22px;border-radius:999px;border:1.5px solid #FFD54A;background:transparent;color:#FFE9A8;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;transition:background .25s,color .25s,box-shadow .25s}
+.vd:hover{background:#FFD54A;color:#2A1060;box-shadow:0 0 22px rgba(255,190,70,.6)}
+.glass{padding:28px 26px;border-radius:22px;background:rgba(40,14,80,.62);border:1px solid rgba(224,176,80,.7);box-shadow:0 10px 30px rgba(8,2,24,.4)}
+.glass h3{margin:0 0 12px;font-family:'Cinzel',serif;font-weight:700;font-size:22px;letter-spacing:.05em;color:#FFD54A}
+.glass p{margin:0;font-size:16px;line-height:1.7;color:#F3E6FF}
+.ph{margin-top:4px;padding:14px 16px;border:1.5px dashed rgba(255,213,74,.7);border-radius:12px;color:#E9DCFF}
+.abg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:44px}
+.crow{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap;padding:14px 0;border-bottom:1px solid rgba(224,176,80,.3)}
+.crow:last-child{border-bottom:0}
+.cn{font-family:'Cinzel',serif;font-weight:700;font-size:17px;color:#FFF3D6}
+.cn b{color:#FFD54A;margin-right:10px}
+.call{display:inline-flex;align-items:center;min-height:44px;padding:10px 20px;border-radius:999px;background:linear-gradient(180deg,#FFE48A,#F2B02E);color:#2A1060;font-weight:700;font-size:14px;letter-spacing:.06em;transition:transform .2s,box-shadow .2s}
+.call:hover{transform:translateY(-2px);box-shadow:0 0 24px rgba(255,190,70,.7)}
+.foot{padding:40px clamp(16px,4vw,40px) 28px;background:#0C041E;border-top:1px solid rgba(224,176,80,.55)}
+.fgrid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}
+.ft{font-family:'Cinzel',serif;font-weight:700;font-size:18px;letter-spacing:.06em;color:#FFD54A;margin:0 0 10px}
+.fp{margin:0 0 6px;font-size:15px;line-height:1.6;color:#F3E6FF}
+.fl a{display:block;padding:6px 0;font-size:15px;color:#F3E6FF}
+.fl a:hover{color:#FFD54A}
+.copy{max-width:1000px;margin:28px auto 0;padding-top:18px;border-top:1px solid rgba(224,176,80,.3);text-align:center;font-size:13px;letter-spacing:.06em;color:#CDBCEB}
+.ov{position:fixed;left:0;top:0;width:100%;height:100%;z-index:200;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(10,3,28,.82);backdrop-filter:blur(6px);animation:fade .25s ease-out}
+.panel{position:relative;width:min(560px,100%);max-height:92vh;overflow:auto;padding:32px 28px 28px;border-radius:24px;background:linear-gradient(160deg,#2E1262,#1B0B45);border:1.5px solid #E0B050;box-shadow:0 0 60px rgba(255,170,70,.3);animation:pop .35s cubic-bezier(.2,.9,.3,1.2)}
+.x{position:absolute;right:14px;top:14px;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(224,176,80,.8);background:rgba(255,255,255,.06);color:#FFE9A8;font-size:22px;line-height:1}
+.x:hover{background:#FFD54A;color:#2A1060}
+.mrow{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid rgba(224,176,80,.3);font-size:16px;line-height:1.5}
+.mrow span:first-child{flex:0 0 96px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:12px;color:#FFD98A;padding-top:3px}
+.reveal{animation:rise .9s ease-out both}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.94)}to{opacity:1;transform:none}}
+@media (max-width:1000px){.grid,.abg{grid-template-columns:repeat(2,minmax(0,1fr))}.fgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:700px){.mtxt{display:block}.cds{gap:6px}.cd{width:calc(20% - 5px);min-width:0}.cdn{font-size:22px}.cdl{font-size:9px;letter-spacing:.02em}.cdi{padding:10px 2px 8px}.cdh{letter-spacing:.2em;font-size:11px;gap:8px}.info{flex-direction:column;align-items:center;gap:4px;font-size:14px}.site{--nav:104px}.nav{justify-content:center;padding-top:6px;padding-bottom:2px}.links{width:100%;justify-content:space-between}.links a{flex:1;text-align:center;padding:12px 4px;font-size:12px;letter-spacing:.08em}.grid,.abg,.fgrid{grid-template-columns:minmax(0,1fr)}.eyebrow{font-size:12px;letter-spacing:.2em}.mrow{flex-direction:column;gap:2px}.crow{flex-direction:column;align-items:flex-start}.panel{padding:28px 20px 22px}}
+@media (prefers-reduced-motion:reduce){.reveal,.ov,.panel{animation:none!important}html{scroll-behavior:auto}}
+
+@media (max-width:700px){.btn{width:100%;max-width:320px}}
+
+</style>
+</helmet>
+<div class="site">
+<nav class="nav" aria-label="Main">
+<a class="brand" href="index.html"><img src="./assets/4b564d495ff0f172e50e3bdf41c1c0b4.png" alt="">SPECTRA'26</a>
+<div class="links"><a class="on" href="index.html">Home</a><a class="" href="events.html">Events</a><a class="" href="about.html">About</a><a class="" href="contact.html">Contact</a></div>
+</nav>
+<section class="hero" style="width: 1353px; height: 893px">
+<div class="poster"><img src="./assets/bd4ed8635333d2c60797b35830cbdf35.jpg" alt="SPECTRA'26 poster: Yuva Club in association with Young Indians CII, Dr. N.G.P. Arts and Science College, 15 December 2026"></div>
+<div class="band">
+<sc-if value="{{live}}" hint-placeholder-val="{{true}}">
+<div class="cds" role="timer" aria-label="Countdown to SPECTRA'26">
+<sc-for list="{{count}}" as="c" hint-placeholder-count="5"><div class="cd"><div class="cdi"><div class="cdn">{{c.n}}</div><div class="cdl">{{c.l}}</div></div></div></sc-for>
+</div>
+</sc-if>
+<sc-if value="{{over}}" hint-placeholder-val="{{false}}">
+<div class="cdn" style="font-size:clamp(24px,4vw,40px)">SPECTRA'26 has begun — welcome to the magic!</div>
+</sc-if>
+<div class="btns">
+<a class="btn gold" href="events.html">Explore Events</a>
+<a class="btn line" href="about.html">About Spectra</a>
+<a class="btn line" href="contact.html">Contact Us</a>
+</div>
+<div class="mtxt"><b>Dr. N.G.P. Arts and Science College</b><span>Yuva Club · Young Indians · CII</span></div>
+<div class="info"><span>15 December 2026</span><span>Dr. N.G.P. Arts and Science College Campus</span><span>Registrations open</span></div>
+</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"eventTime":{"editor":"text","default":"00:00"},"$preview":{"width":1360,"height":1000}}'>
+class Component extends DCLogic {
+  componentDidMount() {
+    if (this._t) clearInterval(this._t);
+    this._t = setInterval(() => this.setState({ tick: Math.floor(Date.now() / 1000) }), 1000);
+  }
+  componentWillUnmount() {
+    clearInterval(this._t);
+    this._t = null;
+  }
+  renderVals() {
+    // Single countdown, derived from the real clock (IST = UTC+5:30). Target: 15 Dec 2026 at eventTime (IST).
+    const IST = 19800000;
+    const tm = /^(\d{1,2}):(\d{2})$/.exec(String(this.props.eventTime ?? '00:00').trim());
+    const hh = tm ? Math.min(23, +tm[1]) : 0;
+    const mm = tm ? Math.min(59, +tm[2]) : 0;
+    const target = Date.UTC(2026, 11, 15, hh, mm, 0);
+    const nowIst = Date.now() + IST;
+    let count = [];
+    let live = false;
+    if (nowIst < target) {
+      live = true;
+      const d = new Date(nowIst);
+      const mk = (m) => Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + m, d.getUTCDate(), d.getUTCHours(), d.getUTCMinutes(), d.getUTCSeconds());
+      const t = new Date(target);
+      let m = (t.getUTCFullYear() - d.getUTCFullYear()) * 12 + (t.getUTCMonth() - d.getUTCMonth());
+      while (m > 0 && mk(m) > target) m--;
+      m = Math.max(0, m);
+      const s = Math.floor(Math.max(0, target - mk(m)) / 1000);
+      const p = (x) => String(x).padStart(2, '0');
+      count = [
+        { n: p(m), l: 'Months' },
+        { n: p(Math.floor(s / 86400)), l: 'Days' },
+        { n: p(Math.floor(s / 3600) % 24), l: 'Hours' },
+        { n: p(Math.floor(s / 60) % 60), l: 'Minutes' },
+        { n: p(s % 60), l: 'Seconds' }
+      ];
+    }
+    return { count, live, over: !live };
+  }
+}
+</script>
+</body>
+</html>
