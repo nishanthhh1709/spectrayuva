@@ -20,14 +20,14 @@ button{font-family:inherit;cursor:pointer}
 .site{--nav:64px;width:100%;max-width:1600px;margin:0 auto;font-family:'Quicksand',sans-serif;color:#FFF3D6;background:#150833;overflow-x:hidden}
 .nav{position:sticky;top:0;z-index:50;min-height:var(--nav);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px 24px;padding:0 clamp(16px,4vw,48px);background:rgba(21,8,51,.94);border-bottom:1px solid rgba(224,176,80,.55);backdrop-filter:blur(8px)}
 .brand{display:flex;align-items:center;gap:12px;font-family:'Cinzel Decorative',serif;font-weight:900;font-size:22px;letter-spacing:.08em;color:#FFD54A}
-.brand img{width:40px;height:40px;object-fit:contain}
+.brand img{width:40px;height:40px;object-fit:cover}
 .links{display:flex;gap:4px}
 .links a{padding:12px 16px;font-weight:700;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#FFF3D6;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
 .links a:hover,.links a.on{color:#FFD54A;border-color:#FFD54A}
-.hero{position:relative;display:flex;flex-direction:column;background-color:#1F112C;background-image:url('./assets/bd4ed8635333d2c60797b35830cbdf35.jpg');background-size:100% auto;background-position:center bottom;background-repeat:no-repeat;overflow:hidden}
+.hero{position:relative;display:flex;flex-direction:column;background-color:#1F112C;background-image:url('assets/spectra-hero.jpg');background-size:100% auto;background-position:center bottom;background-repeat:no-repeat;overflow:hidden}
 .poster{position:relative;z-index:1;width:100%;aspect-ratio:1600/766;overflow:hidden}
 .poster::after{display:none}
-.poster img{position:absolute;left:0;top:0;display:block;width:100%;height:100%;object-fit:contain}
+.poster img{position:absolute;left:0;top:0;display:block;width:100%;height:100%;object-fit:cover}
 .band{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;margin-top:-4.4%;padding:0 20px 40px;text-align:center}
 .eyebrow{font-weight:700;font-size:14px;letter-spacing:.32em;text-transform:uppercase;color:#FFD98A}
 .cds{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
@@ -102,11 +102,11 @@ button{font-family:inherit;cursor:pointer}
 </helmet>
 <div class="site">
 <nav class="nav" aria-label="Main">
-<a class="brand" href="index.html"><img src="./assets/4b564d495ff0f172e50e3bdf41c1c0b4.png" alt="">SPECTRA'26</a>
+<a class="brand" href="index.html"><img src="assets/spectra-logo.png" alt="">SPECTRA'26</a>
 <div class="links"><a class="on" href="index.html">Home</a><a class="" href="events.html">Events</a><a class="" href="about.html">About</a><a class="" href="contact.html">Contact</a></div>
 </nav>
 <section class="hero" style="width: 1353px; height: 893px">
-<div class="poster"><img src="./assets/bd4ed8635333d2c60797b35830cbdf35.jpg" alt="SPECTRA'26 poster: Yuva Club in association with Young Indians CII, Dr. N.G.P. Arts and Science College, 15 December 2026"></div>
+<div class="poster"><img src="assets/spectra-hero.jpg" alt="SPECTRA'26 poster: Yuva Club in association with Young Indians CII, Dr. N.G.P. Arts and Science College, 15 December 2026"></div>
 <div class="band">
 <sc-if value="{{live}}" hint-placeholder-val="{{true}}">
 <div class="cds" role="timer" aria-label="Countdown to SPECTRA'26">
